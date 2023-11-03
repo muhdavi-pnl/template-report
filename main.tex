@@ -1,0 +1,65 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[super,square]{natbib}		% Package to make citations superscrit with brackets
+\usepackage{anysize}					% Package to change margin size
+\marginsize{2cm}{2cm}{1cm}{2cm}
+\usepackage{fancyhdr}					% Package to make headers
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{soul}						% Package for highligths
+\usepackage[dvipsnames]{xcolor}			% Colors for the references links
+\usepackage{hyperref}					% Package to link references
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=CadetBlue,
+    filecolor=CadetBlue,      
+    urlcolor=CadetBlue,
+}
+\usepackage{lipsum}						% Package for lorem ipsum
+\usepackage{multicol}					% Package for multicolumn
+\setlength\columnsep{18pt}
+\renewenvironment{abstract}				% Sets bastract
+ {\par\noindent\textbf{Ringkasan}\ \ignorespaces \\}
+ {\par\noindent\medskip}
+% Change Contents and Reference
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand\refname{Daftar Pustaka}
+
+ 
+\begin{document}
+% Makes header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\fancyhead[R]{\textit{Baltic Security Foundation}}
+\fancyhead[L]{}
+% Makes footnotes with an asterisk
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{center}
+\Large{\textbf{\#1 Laporan Practice Big Data} -- \textit{Persiapan Environment}}
+\vspace{0.4cm}
+\normalsize \\ 
+Nama mahasiswa (NIM) \\
+Kelompok (Kelas) \\
+\vspace{0.1cm}
+\small{Prodi Teknologi Rekayasa Komputer Jaringan} \\
+\small{Jurusan Teknologi Informasi dan Komputer} \\
+\small{Politeknik Negeri Lhokseumawe}
+\medskip
+\normalsize
+\end{center}
+
+{\color{gray}\hrule}
+\vspace{0.4cm}
+\begin{abstract} 								% 5
+\input{./sections/0_ringkasan.tex}
+\end{abstract}
+{\color{gray}\hrule}
+\medskip
+\input{./sections/1_pendahuluan.tex}			% 15
+\input{./sections/2_alat-bahan.tex}				% 20
+\input{./sections/3_prosedur-kerja.tex}		% 25
+\input{./sections/4_hasil-pembahasan.tex}		% 25
+\input{./sections/5_kesimpulan.tex}				%  5
+\bibliographystyle{plain}
+\bibliography{references}						%  5 - minimal terdapat 2 daftar pustaka
+\end{document}
